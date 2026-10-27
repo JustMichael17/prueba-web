@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Cómo funciona un Debugger de Java?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>¿Cómo funciona un Debugger de Java?</h1>
+    <p class="sub">Pulsa los botones para ver al depurador trabajar paso a paso.</p>
+  </header>
+
+  <main>
+    <section class="stage">
+      <!-- Código con línea resaltada -->
+      <div class="panel code-panel">
+        <div class="panel-title">Código Java</div>
+        <pre class="code"><code><span class="line" data-line="1"><span class="ln">1</span> public class Suma {</span>
+<span class="line" data-line="2"><span class="ln">2</span>   public static void main(String[] a) {</span>
+<span class="line" data-line="3"><span class="ln">3</span>     int x = 5;</span>
+<span class="line" data-line="4"><span class="ln">4</span>     int y = 3;</span>
+<span class="line" data-line="5"><span class="ln">5</span>     int total = suma(x, y);</span>
+<span class="line" data-line="6"><span class="ln">6</span>     System.out.println(total);</span>
+<span class="line" data-line="7"><span class="ln">7</span>   }</span>
+<span class="line" data-line="8"><span class="ln">8</span>   static int suma(int a, int b) {</span>
+<span class="line" data-line="9"><span class="ln">9</span>     return a + b;</span>
+<span class="line" data-line="10"><span class="ln">10</span>   }</span>
+<span class="line" data-line="11"><span class="ln">11</span> }</span></code></pre>
+      </div>
+
+      <!-- Variables en memoria -->
+      <div class="panel vars-panel">
+        <div class="panel-title">Variables (memoria)</div>
+        <table class="vars">
+          <thead><tr><th>Nombre</th><th>Valor</th></tr></thead>
+          <tbody id="vars-body">
+            <tr><td colspan="2" class="empty">— aún nada —</td></tr>
+          </tbody>
+        </table>
+
+        <div class="panel-title" style="margin-top:18px">Consola</div>
+        <div class="console" id="console"></div>
+      </div>
+    </section>
+
+    <!-- Explicación del paso actual -->
+    <div class="explain" id="explain">
+      El depurador es una lupa para tu programa. Lo corre despacio y te deja mirar dentro.
+    </div>
+
+    <!-- Controles -->
+    <div class="controls">
+      <button id="btn-prev">◀ Atrás</button>
+      <button id="btn-next" class="primary">Paso a paso ▶</button>
+      <button id="btn-play">▶ Auto</button>
+      <button id="btn-reset">↺ Reiniciar</button>
+    </div>
+
+    <!-- Conceptos clave -->
+    <section class="concepts">
+      <div class="concept">
+        <div class="concept-dot"></div>
+        <h3>Punto de parada</h3>
+        <p>Le dices al depurador: "para aquí". La línea roja es un breakpoint.</p>
+      </div>
+      <div class="concept">
+        <div class="concept-dot"></div>
+        <h3>Paso a paso</h3>
+        <p>Ejecuta una línea cada vez. Así ves el orden real.</p>
+      </div>
+      <div class="concept">
+        <div class="concept-dot"></div>
+        <h3>Ver variables</h3>
+        <p>En cada parada miras cuánto vale cada cosa.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho para aprender a depurar · HTML + CSS + JavaScript puros</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
